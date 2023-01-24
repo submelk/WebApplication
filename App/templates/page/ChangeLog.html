@@ -1,0 +1,37 @@
+{% extends "master/layout.html" %}
+
+{% block content %}
+
+<section class="py-50">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h5>تغییرات</h5>
+            <div class="col-lg-9 col-12">
+                {% for version in version %}
+                <div class="box">
+                    <div class="row g-0">
+                        <div class="col-md-8 col-12">
+                            <div class="box-body">
+                                <h4><a href="#"><strong>{{ version.identifiers }}</strong></a></h4>
+                                <div class="d-flex mb-10">
+                                    <div class="me-10">
+                                        <i class="fa fa-user me-5"></i>{{ version.name }}
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-calendar me-5"></i>{{ version.date }}
+                                    </div>
+                                </div>
+                                <p>
+                                    {{ version.description }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

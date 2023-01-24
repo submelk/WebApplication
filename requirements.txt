@@ -1,0 +1,5 @@
+flask
+flask-sqlalchemy==2.5.1
+flask-wtf
+flask-restful
+BeautifulSoup4

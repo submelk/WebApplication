@@ -1,0 +1,44 @@
+{% extends "master/admin_layout.html" %}
+
+{% block content %}
+
+<section class="content">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-hover dataTable no-footer" role="grid">
+        <tbody>
+          {% for index in member %}
+          <tr role="row">
+            <td class="w-100">
+              <nav class="nav mt-2">
+                {{ index.id }}
+              </nav>
+            </td>
+            <td class="w-300">
+              <p class="mb-0">
+                <a href="#"><strong>{{ index.username }}</strong></a>
+                <small class="sidetitle">{{ index.phone }}</small>
+              </p>
+              <p class="mb-0">{{ index.role }}</p>
+            </td>
+            <td class="w-300">
+              <nav class="nav mt-2">
+                {{ index.ldap }}
+                <!--
+          <p>
+            <a href="{{ url_for('delete_member', member_id=index.id) }}"><small>Delete</small></a>
+          </p>-->
+              </nav>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}

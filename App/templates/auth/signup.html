@@ -1,0 +1,67 @@
+{% extends "master/layout.html" %}
+
+{% block content %}
+
+<section class="pt-150 pb-20"></section>
+
+<section class="py-50">
+    <div class="container">
+        <div class="row justify-content-center g-0">
+            <div class="col-lg-5 col-md-5 col-12">
+                <div class="box box-body">
+                    <div class="content-top-agile pb-0 pt-20">
+                        <h2 class="text-primary">با ما شروع کنید</h2>
+                        <p class="mb-0">ثبت عضویت جدید</p>
+                    </div>
+                    <div class="p-40">
+                        <form action="{{ url_for('register') }}" method="post" autocomplete="on">
+                            <div class="form-group">
+                                <div class="input-group mb-15">
+                                    <span class="input-group-text bg-transparent"><i class="ti-email"></i></span>
+                                    <input type="email" name="username" class="form-control ps-15 bg-transparent"
+                                        placeholder="ایمیل شما">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-15">
+                                    <span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
+                                    <input type="password" name="password" class="form-control ps-15 bg-transparent"
+                                        placeholder="رمز عبور">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-15">
+                                    <span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
+                                    <input type="password" name="retypeـpassword"
+                                        class="form-control ps-15 bg-transparent" placeholder="تکرار رمز عبور">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="checkbox ms-5">
+                                        <input type="checkbox" id="agreeTerms" name="terms" value="agree" checked>
+                                        <label for="basic_checkbox_22" class="form-label"> استفاده از کریپتو ادمین به
+                                            معنی پذیرش <a href="#" class="text-warning"><b> قوانین و مقررات </b></a>این
+                                            سرویس است .</label>
+                                    </div>
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-info w-p100 mt-15">ثبت نام</button>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                        </form>
+                        <div class="text-center">
+                            <p class="mt-15 mb-0"> از قبل حساب کاربری داری ؟ پس<a href="{{ url_for('login') }}"
+                                    class="text-danger ms-5"> وارد شو</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

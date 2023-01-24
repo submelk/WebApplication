@@ -1,0 +1,17 @@
+{% extends "master/admin_layout.html" %}
+
+{% block content %}
+
+<div class="flexbox align-items-center mt-10" style="margin: 10%;">
+  <div>
+    <p class="no-margin fw-600">پیشخوان مدیر</p>
+    <div class="clearfix">
+      <a type="button" href="{{ url_for('admin_faq') }}" class="waves-effect waves-light fw-600 btn btn-rounded btn-light mb-5 fs-14 p-1 px-3 me-1 mt-3">سوالات متداول</a>
+      <a type="button" href="{{ url_for('admin_about') }}" class="waves-effect waves-light fw-600 btn btn-rounded btn-light mb-5 fs-14 p-1 px-3 me-1 mt-3">درباره
+      </a><a type="button" href="{{ url_for('admin_member') }}" class="waves-effect waves-light fw-600 btn btn-rounded btn-light mb-5 fs-14 p-1 px-3 me-1 mt-3">اعضا</a>
+      <a type="button" href="{{ url_for('admin_consultation') }}" class="waves-effect waves-light fw-600 btn btn-rounded btn-light mb-5 fs-14 p-1 px-3 me-1 mt-3">درخواست های مشاوره</a>     
+    </div> 
+  </div>
+  </div>
+
+{% endblock %}

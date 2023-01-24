@@ -1,0 +1,32 @@
+{% extends "master/layout.html" %}
+
+{% block content %}
+
+<section class="pt-150 pb-20"></section>
+
+<section class="py-50 cust-accordion">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="tab-wrapper v1">
+          <div class="list">
+            {% for index in q_faq %}
+            <div class="item">
+              <div class="tab-btn">
+                <a href="#">{{ index.questions }}<em class="mdi mdi-plus"></em></a>
+              </div>
+              <div class="tab-content" style="display: none;">
+                <p>
+                  {{ index.answers }}
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

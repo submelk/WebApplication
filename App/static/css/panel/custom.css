@@ -1,0 +1,341 @@
+/*----index31_css----*/
+.main-header .navbar{
+    background-color: white;
+}
+.main_font_1{
+    font-size: 45px;
+}
+.main_font_1 small{
+    font-size: 14px;
+    }
+@media only screen and (max-width: 500px) {
+    .main_font_1{
+    font-size: 35px;
+    }
+    .main_font_1 small{
+    font-size: 11px;
+    }  
+}
+ .nav-pills > li > a.active {
+    border-top-color: #6993ff;
+}
+
+@media only screen and (max-width: 767px) {
+    .be-1{
+        border-right: 1px solid none; 
+        border-bottom: 1px solid #f3f6f9  !important;
+    }
+    .btop-1{
+    border-top:1px solid #f3f6f9 ;
+    }
+}
+.box {
+    position: relative;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 0px;
+    -webkit-transition: .5s;
+    transition: .5s;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-shadow: 0 0 0 0 rgb(82 63 105 / 0%);
+    box-shadow: 0 0 0 0 rgb(82 63 105 / 4%);
+}
+.box-fullscreen {
+    position: fixed !important;
+    top: 110px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 0;
+    z-index: 9999 !important;
+}
+
+.fs-45{
+    font-size: 45px;
+}
+
+.content-wrapper{
+    background-color: #FAFAFD ;
+}
+.sm-blue{
+    background-color: #FAFAFD ;  
+}
+
+
+@media screen and (min-device-width: 1366px) and (max-device-width: 1440px) { 
+   .sm-blue a{  
+    padding: 15px 5px 15px 5px;}
+}
+
+
+.main-header .app-menu .search-bx input[type="search"]{
+    background-color: #FAFAFD ;  
+}
+.main-header .app-menu .search-bx .btn{
+    background-color: #FAFAFD ;  
+}
+
+.nav-pills .nav-link{
+    color: #a3a3a3;
+}
+.customhtab .nav-link.active{
+	border-bottom: 2px solid #0080ff;
+    color: #0080ff;
+    background: none;
+}
+.customhtab_1  .nav-link.active{
+	border-bottom: none;
+    color: #172b4c;
+    background: none;
+}
+
+.box-header > .box-tools_1 {
+    position: absolute;
+    left: 1.5rem;
+    top: 0.5rem;
+}
+
+@media only screen and (max-width: 500px) {
+     .box-header > .box-tools_1 {
+        position: absolute;
+        right: -0.5rem;
+        top: 3rem;
+    }
+    
+}
+
+.box-controls_1 {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse;
+}
+.box-controls_2 {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse;
+}
+.box-controls_1 li > a {
+    font-family: themify;
+    font-size: 0.8571rem;
+    display: inline-block;
+    padding: 0 4px;
+    margin: 0 4px;
+    background-color: #0080ff;
+    color: #fff;
+    border-radius: 50%;
+    opacity: .8;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+    padding: 8px 14px;
+}
+.box-controls_2 li > a {
+    font-family: themify;
+    font-size: 0.8571rem;
+    display: inline-block;
+    padding: 0 4px;
+    margin: 0 4px;
+    background-color: #0080ff;
+    color: #fff;
+    border-radius: 50%;
+    opacity: .8;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+    padding: 8px 14px;
+}
+.box-header > .box-controls_1 {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.8rem;
+}
+.box-header > .box-controls_2 {
+    position: absolute;
+    right: 1.5rem;
+    top: 0.3rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .box-header > .box-controls_1 {
+    position: absolute;
+    right: -0.5rem;
+    top: -8px;
+    }
+    .box-header > .box-controls_2 {
+    position: absolute;
+    right: -0.5rem;
+    top: 34px;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .box-controls_1 li > a  {
+        padding: 4px 10px;
+    }
+}
+@media only screen and (max-width: 634px) {
+    .box-header > .box-controls_1 {
+    position: absolute;
+    right: -0.5rem;
+    top: -8px;
+    }
+    .box-header > .box-controls_2 {
+    position: absolute;
+    right: -0.5rem;
+    top: 34px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .box-controls_1 li > a  {
+        padding: 4px 10px;
+    }
+    .box-controls_2 li > a  {
+        padding: 4px 10px;
+    }
+}
+
+
+.tag_box {
+  background-color: #ededed; /* Green */
+  border: none;
+  color: #333;
+  padding: 15px 32px;
+  border-right: 4px solid green;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.tag_box2 {background-color: #ededed;border-right: 4px solid #008CBA;} /* Blue */
+.tag_box3 {background-color: #ededed;border-right: 4px solid #f44336;} /* Red */ 
+.tag_box4 {background-color: #ededed;border-right: 4px solid #656565; color: black;} /* Gray */ 
+.tag_box5 {background-color: #ededed;border-right: 4px solid #000000;} /* Black */
+.tag_box6 {background-color: #ededed;border-right: 4px solid #dadbdb;} /* Black */
+
+.tag_box_hover {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.tag_box_hover1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.tag_box_hover1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.tag_box_hover2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.tag_box_hover2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.tag_box_hover3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.tag_box_hover3:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.tag_box_hover4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.tag_box_hover4:hover {background-color: #e7e7e7;}
+
+.tag_box_hover5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.tag_box_hover5:hover {
+  background-color: #555555;
+  color: white;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .Eth_box {
+        margin-top: 20px;
+    }    
+}
+
+.content_box{
+    text-align: center;
+    padding-top: 150px;
+    min-height: 250px;
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    line-height: 60px;
+    padding: 0;
+    border-radius: 100%;
+}
+#chat-box-body #chat-circle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    box-shadow: 0px 3px 16px 0px rgb(0 0 0 / 20%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    transform: scale(1);
+    border-radius: 10px;
+}
+
+.icon-Group-chat .path2:before {
+    content: "\ed56";
+    margin-left: -1em;
+    opacity: 0.3;
+}
+
+.btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default.active {
+    background-color: #0080ff !important;
+    border-color: #0080ff !important;
+    color: #172b4c;
+}
+
+/*----index31_Css_End----*/

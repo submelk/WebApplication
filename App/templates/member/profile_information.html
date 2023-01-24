@@ -1,0 +1,74 @@
+{% extends "master/user_layout.html" %}
+
+{% block content %}
+
+
+<div class="container" style="margin-top:20px"><div class="row"><div class="col-sm-1"></div>
+<div class="col-sm-10">
+<div class="topdiv shadow">
+
+
+    <div class="col-sm-12 rqstpnl row">
+
+
+        <div class="col-sm-12">
+            <h3>اطلاعات شخصی</h3>
+        </div>
+
+        <form action="{{ url_for('profile_information') }}" method="post" style=" display: contents; " enctype="multipart/form-data">
+
+            <div class="col-sm-4">
+                نام<br><br>
+                    <input type="text" name="uname" id="uname" class="btnrqst" placeholder="نام" required>
+            </div>
+
+            <div class="col-sm-4">
+                نام خانوادگی<br><br>
+                    <input type="text" name="ufamily" id="ufamily" class="btnrqst" placeholder="نام خانوادگی" required>
+            </div>
+
+            <div class="col-sm-4">
+                کد ملی<br><br>
+                    <input type="text" name="uiid" id="uiid" class="btnrqst" placeholder="کد ملی" required>
+            </div>
+
+            <div class="col-sm-4">
+                تاریخ تولد<br><br>
+                    <input type="text" name="ubirthday" id="ubirthday" class="btnrqst" placeholder="تاریخ تولد" required>
+            </div>
+
+            <div class="col-sm-4">
+                ایمیل<br><br>
+                    <input type="text" name="uemail" id="uemail" class="btnrqst" placeholder="ایمیل" required>
+            </div>
+
+            <div class="col-sm-4">
+                آدرس<br><br>
+                    <input type="text" name="uaddress" id="uaddress" class="btnrqst" placeholder="آدرس" required>
+            </div>
+
+        <div class="col-sm-4">
+            تصویر احراز هویت
+            <br><br>
+
+            <div class="form-group">
+                <label for="phrases">انتخاب تصویر</label>
+                <input type="file" name="uimage_file" id="uimage_file" />
+              </div>
+
+        </div>
+        
+        <div class="col-sm-4">
+            <br><br>
+            <input type="submit" class="btn btn-primary" value="ثبت اطلاعات" class="btnrqst" />
+        </div>
+
+    </form>
+
+    </div>
+
+</div>
+</div>
+<div class="col-sm-1"></div></div></div>
+
+{% endblock %}

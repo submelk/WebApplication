@@ -1,0 +1,88 @@
+{% extends "master/admin_layout.html" %}
+
+{% block content %}
+<br />
+<br />
+<form action="{{ url_for('add_page') }}" method="POST">
+  <input placeholder="عنوان صفحه" type="text" name="title" required />
+  <br />
+  <br />
+  <input placeholder="نوع صفحه" type="text" name="page_type" />
+  <br />
+  <br />
+
+
+  <!-- WYSIWYG Editor -->
+  <div id="toolbar">
+    <a class="label label-primary" data-wysihtml5-command="bold">Bold</a>
+    <a class="label label-primary" data-wysihtml5-command="italic">Italic</a>
+    <a class="label label-primary" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">H1</a>
+    <a class="label label-primary" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
+  </div>
+
+  <br />
+  <textarea id="editor" rows="20" , cols="80" name="content" data-placeholder="محتوی صفحه" required>
+    </textarea>
+
+  <br />
+  <br />
+  <input type="submit" class="moreArticles" value="Submit" />
+</form>
+
+<script>
+  var editor = new wysishtml5.Editor('editor', {
+    toolbar: 'toolbar',
+    parserRules: wysihtml5ParserRules
+  });
+</script>
+
+<hr />
+
+<div class="row">
+
+
+  <table class="table table-hover text-nowrap table-head-fixed">
+    <thead>
+      <tr>
+        <th class="text-center">
+          نوع صفحه
+        </th>
+        <th class="text-center">
+          عنوان صفحه
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for index in pages %}
+      <tr>
+
+        <td class="text-center">
+          <p>
+            <a href="{{ url_for('delete_page', page_id=index.id) }}"><small>Delete</small></a>
+          </p>
+        </td>
+
+        <td class="text-center">
+          <p>
+            {{ index.page_type }}
+          </p>
+        </td>
+
+
+        <td class="text-center">
+          <p>
+            {{ index.page_name }}
+          </p>
+        </td>
+
+      </tr>
+
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

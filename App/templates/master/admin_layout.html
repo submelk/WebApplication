@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/images/favicon.ico">
+
+    <title>صاب‌ملک</title>
+
+    <!-- Vendors Style-->
+    <link rel="stylesheet" href="/static/css/panel/vendors_css.css">
+    <!-- Style-->
+    <link rel="stylesheet" href="/static/css/panel/style.css">
+    <link rel="stylesheet" href="/static/css/panel/skin_color.css">
+    <link rel="stylesheet" href="/static/css/panel/custom.css">
+    <link rel="stylesheet" href="/static/css/panel/custom.css">
+
+    {% block head %}{% endblock %}
+
+</head>
+
+<body class="light-skin sidebar-mini theme-primary rtl sidebar-collapse">
+
+    <div class="wrapper">
+        <div id="loader"></div>
+
+        <header class="main-header">
+            <div class="d-flex align-items-center logo-box justify-content-start">
+                <!-- Logo -->
+                <a href="{{ url_for('admin_dashboard') }}" class="logo">
+                    <!-- logo-->
+                    <div class="logo-mini w-30">
+                        <span class="light-logo"><img src="/static/images/sub.png" alt="logo"></span>
+                        <span class="dark-logo"><img src="/static/images/sub.png" alt="logo"></span>
+                    </div>
+                </a>
+            </div>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <div class="app-menu">
+                    <ul class="header-megamenu nav">
+                        <li class="btn-group nav-item">
+                            <a href="#" class="waves-effect waves-light nav-link push-btn btn-primary-light"
+                                data-toggle="push-menu" role="button">
+                                <i data-feather="align-left"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-custom-menu r-side">
+                    <ul class="nav navbar-nav">
+
+                        <!-- User Account-->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="waves-effect waves-light dropdown-toggle btn-primary-light"
+                                data-bs-toggle="dropdown" title="کاربر">
+                                <i data-feather="user"></i>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX">
+                                <li class="user-body">
+                                    <a class="dropdown-item" href="{{ url_for('admin_dashboard') }}"><i
+                                            class="ti-settings text-muted me-2"></i> پیشخوان مدیر </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ url_for('logout') }}"><i
+                                            class="ti-lock text-muted me-2"></i> خروج </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar">
+            <!-- sidebar-->
+            <section class="sidebar position-relative">
+                <div class="multinav">
+                    <div class="multinav-scroll" style="height: 100%;">
+                        <!-- sidebar menu-->
+                        <ul class="sidebar-menu" data-widget="tree">
+
+                            <li class="treeview">
+                                <a href="#">
+                                    <i data-feather="grid"></i>
+                                    <span>مشاهده و مدیریت درخواست ها</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+
+                                <ul class="treeview-menu">
+
+                                    <li><a href="{{ url_for('admin_consultation') }}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>درخواست های
+                                            مشاوره</a></li>
+                                    <li><a href="{{ url_for('admin_member') }}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>اعضا</a>
+                                    </li>
+                                    <li><a href="{{ url_for('admin_about') }}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>درباره</a>
+                                    </li>
+                                    <li><a href="{{ url_for('admin_faq') }}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>سوالات
+                                            متداول</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                        <div class="sidebar-widgets">
+
+                            <div class="copyright text-center m-25">
+                                <p><strong class="d-block">صاب‌ملک</strong>© کلیه حقوق محفوظ است</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        {% block content %}{% endblock %}
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+
+        </footer>
+
+        <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Page Content overlay -->
+
+    <!-- Vendor JS -->
+    <script src="../../static/js/panel/vendors.min.js"></script>
+    <script src="../../static/assets/icons/feather-icons/feather.min.js"></script>
+
+    <script src="../../static/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js"></script>
+    <script src="../../static/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.fa-IR.js"></script>
+    <script src="../../static/assets/vendor_components/Flot/jquery.flot.js"></script>
+    <script src="../../static/assets/vendor_components/Flot/jquery.flot.resize.js"></script>
+    <script src="../../static/assets/vendor_components/Flot/jquery.flot.pie.js"></script>
+    <script src="../../static/assets/vendor_components/Flot/jquery.flot.categories.js"></script>
+    <script src="../../static/assets/vendor_components/persian-date/persian-date-0.1.8.min.js"></script>
+    <script src="../../static/assets/vendor_components/Web-Ticker-master/jquery.webticker.min.js"></script>
+
+    <!-- Crypto Admin App -->
+    <script src="../../static/js/panel/template.js"></script>
+    <script src="../../static/js/panel/pages/dashboard32.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+
+</html>

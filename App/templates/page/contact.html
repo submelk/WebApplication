@@ -1,0 +1,88 @@
+{% extends "master/layout.html" %}
+
+{% block content %}
+
+<section class="py-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-7 col-12">
+                <div class="text-end mb-30">
+                    <h2>با ما در ارتباط باشید</h2>
+                    <p>ما برای راهنمایی شما اینجا هستیم ، برای پاسخ هر سوالی که دارید با همکاران ما در ارتباط باشید</p>
+                </div>
+
+                <form action="{{ url_for('contact_request') }}" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="c_name" class="form-control" placeholder="نام">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="c_family" class="form-control" placeholder="نام خانوادگی"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" name="c_email" class="form-control" placeholder="ایمیل شما">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="tel" name="c_tell" class="form-control" placeholder="شماره تلفن" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="c_title" class="form-control" placeholder="موضوع">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-select" name="c_type" placeholder="انتخاب موضوع" required>
+                                    <option id="" value=""></option>
+                                    <option id="" value="">مشاوره سرمایه گذاری</option>
+                                    <option id="" value="">مالی</option>
+                                    <option id="" value="">برنامه ریزی</option>
+                                    <option id="" value="">فنی</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <textarea name="message" name="c_content" rows="5" class="form-control" required=""
+                                    placeholder="پیام"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <button name="submit" type="submit" value="Submit" class="btn btn-primary"> ارسال
+                                پیام</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-5 col-12 mt-30 mt-md-0">
+                <div class="box box-body p-40 bg-dark mb-0">
+                    <h2 class="box-title text-white">اطلاعات تماس</h2>
+                    <div class="widget fs-18 my-20 py-20 by-1 border-light">
+                        <ul class="list list-unstyled text-white-80">
+                            <li class="ps-40"><i class="ti-location-pin"></i>ایران، تهران، بزرگراه صدر، اختیاریه، خیابان عرفاتی غربی، خیابان رحمانی، پلاک 131، طبقه‌ی اول</li>
+                            <li class="ps-40"><i class="ti-email"></i>info@submelk.net</li>
+                        </ul>
+                    </div>
+                    <ul class="list-unstyled d-flex gap-items-1">
+                        <li><a href="#" class="waves-effect waves-circle btn btn-social-icon btn-circle btn-linkedin"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

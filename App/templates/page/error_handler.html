@@ -1,0 +1,22 @@
+{% extends "master/layout.html" %}
+
+{% block content %}
+
+<section class="pt-150 pb-20"></section>
+
+<section class="error-page h-p100">
+    <div class="container h-p100">
+      <div class="row h-p100 align-items-center justify-content-center text-center">
+          <div class="col-lg-7 col-md-10 col-12">
+              <div>
+                  <img src="/static/images/auth-bg/404.png" class="max-w-650 w-p100" alt="">
+                  <h3></h3>
+                  <div class="my-30"><a href="{{ url_for('home') }}" class="btn btn-danger">برو به صفحه اصلی</a></div>				  
+
+              </div>
+          </div>				
+      </div>
+    </div>
+</section>
+
+{% endblock %}

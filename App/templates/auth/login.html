@@ -1,0 +1,52 @@
+{% extends "master/layout.html" %}
+
+{% block content %}
+
+<section class="pt-150 pb-20"></section>
+
+<section class="py-50">
+    <div class="container">
+        <div class="row justify-content-center g-0">
+            <div class="col-lg-5 col-md-5 col-12">
+                <div class="box box-body">
+                    <div class="content-top-agile pb-0 pt-20">
+                        <h2 class="text-primary">ورود</h2>
+                        <p class="mb-0">به صاب‌ملک خوش آمدید</p>
+                    </div>
+                    <div class="p-40">
+                        <form action="{{ url_for('login') }}" method="post">
+                            <div class="form-group">
+                                <div class="input-group mb-15">
+                                    <span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+                                    <input type="text" name="username" class="form-control ps-15 bg-transparent"
+                                        placeholder="نام کاربری">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-15">
+                                    <span class="input-group-text  bg-transparent"><i class="ti-lock"></i></span>
+                                    <input type="password" name="password" class="form-control ps-15 bg-transparent"
+                                        placeholder="رمزعبور">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- /.col -->
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-info w-p100 mt-15" value="Login">ورود</button>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                        </form>
+                        <div class="text-center">
+                            <p class="mt-15 mb-0"><a href="{{ url_for('register') }}" class="text-info ms-5">از اینجا
+                                </a> ثبت نام کنید</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
