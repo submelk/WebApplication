@@ -25189,7 +25189,7 @@ nav.nav-core-sticky .wrap-core-nav-list, nav.nav-core-sticky .nav-header {
   top: auto;
   left: auto;
   width: 100%;
-  z-index: 2;
+  z-index: 10000000;
   padding: 0px 0px;
   }
 
@@ -35177,12 +35177,14 @@ button.btn.dropdown-toggle:after {
 
 .nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus, .nav > li > a.active {
   color: #ffffff !important;
-  background: #8950fc; }
+  background: #00b8d4;
+  }
 
 .nav-pills > li > a {
   border-radius: 0;
   border-bottom: 2px solid transparent;
-  color: #172b4c; }
+  color: #366eff;
+  }
   .nav-pills > li > a > i {
     margin-right: 5px; }
 .nav-pills.rounded > li > a {
