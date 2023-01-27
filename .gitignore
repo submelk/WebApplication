@@ -1,0 +1,14 @@
+App/__pycache__/__init__.cpython-310.pyc
+App/__pycache__/config.cpython-310.pyc
+App/__pycache__/views.cpython-310.pyc
+App/controller/__pycache__/__init__.cpython-310.pyc
+App/controller/__pycache__/admin.cpython-310.pyc
+App/controller/__pycache__/auth.cpython-310.pyc
+App/controller/__pycache__/error_handler.cpython-310.pyc
+App/controller/__pycache__/packages.cpython-310.pyc
+App/controller/__pycache__/pages.cpython-310.pyc
+App/controller/__pycache__/profile.cpython-310.pyc
+App/database/local_DB.db
+App/modules/__pycache__/__init__.cpython-310.pyc
+App/modules/__pycache__/database.cpython-310.pyc
+logging/server.log
