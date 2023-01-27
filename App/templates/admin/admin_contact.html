@@ -8,7 +8,7 @@
     <div class="content-header">
       <div class="d-flex align-items-center">
         <div class="me-auto">
-          <h4 class="page-title">مدیریت اعضا</h4>
+          <h4 class="page-title">مدیریت تماس ها</h4>
           <div class="d-inline-block align-items-center">
             <nav>
               <ol class="breadcrumb">
@@ -29,7 +29,7 @@
 
           <div class="box">
             <div class="box-header with-border">
-              <h4 class="box-title">اعضا<br>
+              <h4 class="box-title">درخواست های تماس با ما<br>
                 <small>لیست</small>
               </h4>
             </div>
@@ -38,7 +38,7 @@
               <div class="col-sm-12">
                 <table class="table table-hover dataTable no-footer" role="grid">
                   <tbody>
-                    {% for index in member %}
+                    {% for index in contact_requests %}
                     <tr role="row">
                       <td class="w-100">
                         <nav class="nav mt-2">
@@ -47,15 +47,17 @@
                       </td>
                       <td class="w-300">
                         <p class="mb-0">
-                          <a href="#"><strong>{{ index.username }}</strong></a>
-                          <small class="sidetitle">{{ index.phone }}</small>
+                          <a href="#"><strong>{{ index.form_name }}</strong></a>
+                          <small class="sidetitle">{{ index.date }}</small>
                         </p>
                       </td>
+                      <td class="w-100">
+                        <nav class="nav mt-2">
+                          {{ index.form_type }}
+                        </nav>
+                      </td>
                       <td class="w-300">
-                        <p class="mb-0">
-                          <a href="#"><strong>{{ index.role }}</strong></a>
-                          <small class="sidetitle">{{ index.ldap }}</small>
-                        </p>
+                        {{ index.form_content }}
                       </td>
                     </tr>
                     {% endfor %}

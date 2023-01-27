@@ -2,38 +2,78 @@
 
 {% block content %}
 
-<section class="content">
+<div class="content-wrapper">
+  <div class="container-full">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="d-flex align-items-center">
+        <div class="me-auto">
+          <h4 class="page-title">مدیریت درخواست های مشاوره</h4>
+          <div class="d-inline-block align-items-center">
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('admin_dashboard') }}"><i
+                      class="mdi mdi-home-outline"></i></a></li>
+              </ol>
+            </nav>
+          </div>
+        </div>
 
-  <div class="row">
-    <div class="col-sm-12">
-      <table class="table table-hover dataTable no-footer" role="grid">
-        <tbody>
-          {% for index in consultation_requests %}
-          <tr role="row">
-            <td class="w-100">
-              <nav class="nav mt-2">
-                {{ index.id }}
-              </nav>
-            </td>
-            <td class="w-300">
-              <p class="mb-0">
-                <a href="#"><strong>{{ index.name }}</strong></a>
-              </p>
-              <p class="mb-0">{{ index.date }}</p>
-            </td>
-            <td class="w-300">
-              <nav class="nav mt-2">
-                {{ index.telephone }}
-              </nav>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-
-      </table>
+      </div>
     </div>
-  </div>
 
-</section>
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+
+          <div class="box">
+            <div class="box-header with-border">
+              <h4 class="box-title">درخواست های مشاوره<br>
+                <small>لیست</small>
+              </h4>
+            </div>
+            <div class="row">
+
+              <div class="col-sm-12">
+                <table class="table table-hover dataTable no-footer" role="grid">
+                  <tbody>
+                    {% for index in consultation_requests %}
+                    <tr role="row">
+                      <td class="w-100">
+                        <nav class="nav mt-2">
+                          {{ index.id }}
+                        </nav>
+                      </td>
+                      <td class="w-300">
+                        <p class="mb-0">
+                          <a href="#"><strong>{{ index.name }}</strong></a>
+                          <small class="sidetitle">{{ index.date }}</small>
+                        </p>
+                      </td>
+                      <td class="w-300">
+                        <nav class="nav mt-2">
+                          {{ index.telephone }}
+                        </nav>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+
+                </table>
+              </div>
+            </div>
+
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!-- /.col-->
+      </div>
+      <!-- ./row -->
+    </section>
+    <!-- /.content -->
+  </div>
+</div>
 
 {% endblock %}

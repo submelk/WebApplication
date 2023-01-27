@@ -1,3 +1,4 @@
+from werkzeug.security import generate_password_hash
 from datetime import datetime, date
 from App import db
 from werkzeug.security import check_password_hash
@@ -7,11 +8,13 @@ from werkzeug.security import check_password_hash
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 # User
+
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=True)
     password = db.Column(db.String(100), nullable=True)
-    phone = db.Column(db.String(100), nullable=True) # unique=True
+    phone = db.Column(db.String(100), nullable=True)  # unique=True
     role = db.Column(db.Integer, nullable=False, default=0)
     credit = db.Column(db.Integer, nullable=False, default=0)
     ldap = db.Column(db.DateTime, nullable=False,
@@ -20,7 +23,7 @@ class User(db.Model):
     def check_password(self, value):
         return check_password_hash(self.password, value)
 
-# User-Information
+# UserInformation
 class UserInformation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     #
@@ -32,10 +35,10 @@ class UserInformation(db.Model):
     uname = db.Column(db.String(50), nullable=True)
     ufamily = db.Column(db.String(50), nullable=True)
     uiid = db.Column(db.String(50), nullable=True)
-    ubirthday = db.Column(db.String(50), nullable=True) # meli code
+    ubirthday = db.Column(db.String(50), nullable=True)  # meli code
     uemail = db.Column(db.String(50), nullable=True)
-    uaddress = db.Column(db.Text, nullable=True) 
-    uverification = db.Column(db.String(50), nullable=True) 
+    uaddress = db.Column(db.Text, nullable=True)
+    uverification = db.Column(db.String(50), nullable=True)
     uimage_file = db.Column(db.String(
         50), nullable=True, default='https://static.thenounproject.com/png/261694-200.png')
 
@@ -69,9 +72,10 @@ class ContactForm(db.Model):
     form_content = db.Column(db.Text, nullable=True)
     date = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-# ChangeLog *sequence-based* #major.minor[.build[.revision]] :> versioning
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+# ChangeLog *sequence-based* #major.minor[.build[.revision]] :> versioning
 class Version(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     major = db.Column(db.Integer, nullable=True)
@@ -83,18 +87,19 @@ class Version(db.Model):
     description = db.Column(db.Text, nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
+
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 # create the database and the db table
-#app.app_context().push()
+# app.app_context().push()
 db.create_all()
 
 # commit the changes
 db.session.commit()
 
-## admin |||||||||||||||||*************************** delete after deploy ***************************|||||||||||||||||
-from werkzeug.security import generate_password_hash
-user = User(username = 'admin', password = generate_password_hash('admin'), role = 1, credit = 0,ldap = datetime.now())
+# admin |||||||||||||||||*************************** delete after deploy ***************************|||||||||||||||||
+user = User(username='admin', password=generate_password_hash(
+    'XfdgsadertA1A@'), role=1, credit=0, ldap=datetime.now())
 db.session.add(user)
-db.session.commit() 
-## admin |||||||||||||||||*************************** delete after deploy ***************************|||||||||||||||||
+db.session.commit()
+# admin |||||||||||||||||*************************** delete after deploy ***************************|||||||||||||||||

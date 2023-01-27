@@ -24,7 +24,7 @@ def about():
         'page/about.html')
 
 @application.route('/FAQ')
-def FAQ():
+def FAQs():
     """Renders the FAQ page."""
 
     q_faq = FAQ.query.order_by(FAQ.id.desc()).all()
@@ -59,6 +59,7 @@ def consultation_request():
 @application.route("/add/contact_request", methods=["POST"])
 def contact_request():
     """Adds new contact request to the database."""
+    
     fn = request.form["c_name"] + "" + request.form["c_family"] + " - " + request.form["c_email"] + " - " + request.form["c_tell"] + " - " + request.form["c_title"] 
 
     con_req = ContactForm(form_type=request.form["c_type"],form_name=fn,form_content=request.form["c_content"])
@@ -67,4 +68,4 @@ def contact_request():
 
     error = "درخواست ایجاد شد"
     flash(error)
-    return redirect(url_for('home'))
+    return redirect(url_for('contact'))
