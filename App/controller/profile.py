@@ -10,15 +10,15 @@ from .auth import *
 def profile_index():
     error1 = None
 
-    userinfo = UserInformation.query.filter(
-        UserInformation.user_id == session["user_id"]).first()
+    # userinfo = UserInformation.query.filter(
+    #     UserInformation.user_id == session["user_id"]).first()
 
-    if userinfo != None:
-        error1 = "مشخصات شما تکمیل شده"
-        flash(error1)
-        return redirect(url_for('member/profile_information'))
+    # if userinfo != None:
+    #     error1 = "مشخصات شما تکمیل شده"
+    #     flash(error1)
+    #     return redirect(url_for('member/profile_information'))
 
-    return render_template('profile_index.html',userinfo=userinfo)
+    return render_template('member/profile_index.html',userinfo=session["user_username"])
 
 @application.route("/profile/information", methods=('GET', 'POST'))
 @login_required

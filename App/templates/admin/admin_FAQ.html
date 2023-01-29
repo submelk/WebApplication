@@ -41,7 +41,8 @@
                 <div class="form-group">
                   <label class="form-label">سوال</label>
                   <div class="input-group mb-3">
-                    <input placeholder="سوال" type="text" id="questions" name="questions" class="form-control" required />
+                    <input placeholder="سوال" type="text" id="questions" name="questions" class="form-control"
+                      required />
                   </div>
                 </div>
                 <div class="form-group">
@@ -60,7 +61,7 @@
                   <i class="ti-save-alt"></i> ثبت
                 </button>
               </div>
-              
+
             </form>
 
           </div>
@@ -85,7 +86,8 @@
                           <a href="#"><strong>{{ index.questions }}</strong></a>
                           <small class="sidetitle">{{ index.date }}</small>
                         </p>
-                        <p class="mb-0"><a href="{{ url_for('delete_FAQ', FAQ_id=index.id) }}"><small>Delete</small></a>
+                        <p class="mb-0"><a href="{{ url_for('delete_FAQ', FAQ_id=index.id) }}"
+                            onclick="return confirm('آیا برای حذف مطمئن هستید؟')"><small>Delete</small></a>
                         </p>
                       </td>
                       <td class="w-300">

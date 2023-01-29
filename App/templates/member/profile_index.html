@@ -3,58 +3,44 @@
 {% block content %}
 
 
-<div class="container" style="margin-top:20px"><div class="row"><div class="col-sm-1"></div>
-<div class="col-sm-10">
-<div class="topdiv shadow">
+<div class="content-wrapper">
+    <div class="container-full">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="d-flex align-items-center">
+                <div class="me-auto">
+                    <h4 class="page-title">پیشخوان کاربر</h4>
+                    <div class="d-inline-block align-items-center">
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ url_for('profile_index') }}"><i
+                                            class="mdi mdi-home-outline"></i></a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
 
-
-    <div style=" display: contents; ">
-
-        <div class="col-sm-4">
-            نام<br><br>
-            <p><strong>{{ userinfo.uname }}</strong></p>
-        </div>
-
-        <div class="col-sm-4">
-            نام خانوادگی<br><br>
-            <p><strong>{{ userinfo.ufamily }}</strong></p>
-         </div>
-
-        <div class="col-sm-4">
-            کد ملی<br><br>
-            <p><strong>{{ userinfo.uiid }}</strong></p>
-        </div>
-
-        <div class="col-sm-4">
-            تاریخ تولد<br><br>
-            <p><strong>{{ userinfo.ubirthday }}</strong></p>
             </div>
-
-        <div class="col-sm-4">
-            ایمیل<br><br>
-            <p><strong>{{ userinfo.uemail }}</strong></p>
         </div>
 
-        <div class="col-sm-4">
-            آدرس<br><br>
-            <p><strong>{{ userinfo.uaddress }}</strong></p>
-                <input type="text" class="form-control" name="uaddress" id="uaddress" class="btnrqst" placeholder="آدرس" required>
-        </div>
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
 
-    <div class="col-sm-4">
-        وضعیت احراز هویت
-        <br><br>
-        <p><strong>{{ userinfo.uverification }}</strong></p>
 
+                <div class="topdiv shadow">
+                    <div class="col-sm-4">
+                        شناسه کاربر<br><br>
+                        <p><strong>{{ userinfo }}</strong></p>
+                    </div>
+                </div>
+
+                <!-- /.col-->
+            </div>
+            <!-- ./row -->
+        </section>
+        <!-- /.content -->
     </div>
-    
 </div>
-
-
-
-
-</div>
-</div>
-<div class="col-sm-1"></div></div></div>
 
 {% endblock %}

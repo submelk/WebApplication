@@ -1,5 +1,5 @@
 __author__ = "NimaFakoor"
-__version__ = '0.0.9'
+__version__ = '1.0.0'
 
 import logging
 logging.basicConfig(filename='logging/server.log',format='[%(funcName)s] - %(levelname)s [%(asctime)s] %(message)s' , level=logging.DEBUG) 

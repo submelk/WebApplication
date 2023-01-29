@@ -97,9 +97,8 @@ db.create_all()
 # commit the changes
 db.session.commit()
 
-# admin |||||||||||||||||*************************** delete after deploy ***************************|||||||||||||||||
-user = User(username='admin', password=generate_password_hash(
-    'XfdgsadertA1A@'), role=1, credit=0, ldap=datetime.now())
-db.session.add(user)
-db.session.commit()
-# admin |||||||||||||||||*************************** delete after deploy ***************************|||||||||||||||||
+# # admin |||||||||||||||||*************************** delete after deploy ***************************|||||||||||||||||
+# user = User(username='admin', password=generate_password_hash('admin'), role=1, credit=0, ldap=datetime.now())
+# db.session.add(user)
+# db.session.commit()
+# # admin |||||||||||||||||*************************** delete after deploy ***************************|||||||||||||||||

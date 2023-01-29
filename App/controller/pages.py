@@ -27,10 +27,10 @@ def about():
 def FAQs():
     """Renders the FAQ page."""
 
-    q_faq = FAQ.query.order_by(FAQ.id.desc()).all()
+    q_faq = FAQ.query.order_by(FAQ.id.asc()).all()
     
     return render_template(
-        'page/faq.html',
+        'page/FAQ.html',
         title='FAQ',
         q_faq=q_faq
     )
