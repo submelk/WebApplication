@@ -11,7 +11,6 @@ def admin_dashboard():
     #     abort(401)
     return render_template("admin/admin_dashboard.html", title='پیشخوان مدیر')
 
-
 @application.route("/admin/contact", methods=["GET", "POST"])
 @login_required
 def admin_contact():
@@ -38,14 +37,12 @@ def admin_member():
 
     return render_template('admin/admin_member.html', member=member)
 
-
 @application.route('/delete/member/<int:member_id>')
 @login_required
 def delete_member(member_id):
     User.query.filter_by(id=member_id).delete()
     db.session.commit()
     return redirect(url_for('admin_member'))
-
 
 @application.route("/admin/FAQ", methods=["GET", "POST"])
 @login_required
@@ -55,7 +52,6 @@ def admin_faq():
     FAQs = FAQ.query.order_by(FAQ.id.desc()).all()
 
     return render_template('admin/admin_FAQ.html', FAQs=FAQs)
-
 
 @application.route('/add/FAQ', methods=['POST'])
 @login_required
@@ -68,14 +64,12 @@ def add_FAQ():
 
     return redirect(url_for('admin_faq'))
 
-
 @application.route('/delete/FAQ/<int:FAQ_id>')
 @login_required
 def delete_FAQ(FAQ_id):
     FAQ.query.filter_by(id=FAQ_id).delete()
     db.session.commit()
     return redirect(url_for('admin_faq'))
-
 
 @application.route("/admin/about", methods=["GET", "POST"])
 @login_required
@@ -91,9 +85,7 @@ def admin_about():
                            content=about_page.page_content
                            )
 
-
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 
 @application.route("/admin/page", methods=["GET", "POST"])
 @login_required
@@ -103,7 +95,6 @@ def admin_page():
     pages = Page.query.order_by(Page.date.desc()).all()
 
     return render_template('admin/admin_page.html', pages=pages)
-
 
 @application.route('/add/page', methods=['POST'])
 @login_required
@@ -116,14 +107,12 @@ def add_page():
 
     return redirect(url_for('admin_page'))
 
-
 @application.route('/delete/page/<int:page_id>')
 @login_required
 def delete_page(page_id):
     Page.query.filter_by(id=page_id).delete()
     db.session.commit()
     return redirect(url_for('admin_page'))
-
 
 @application.route('/edit/page/<int:page_id>')
 @login_required
@@ -134,7 +123,6 @@ def edit_page(page_id):
                            title=page.title,
                            content=page.content
                            )
-
 
 @application.route('/admin/page/<int:page_id>')
 @login_required
@@ -147,13 +135,11 @@ def view_page(page_id):
                            content=page.page_content
                            )
 
-
 @application.route('/admin/ChangeLog')
 @login_required
 def admin_version():
     version = Version.query.all()
     return render_template('admin/version.html', version=version)
-
 
 @application.route('/admin/create/ChangeLog', methods=('GET', 'POST'))
 @login_required
@@ -199,7 +185,6 @@ def create_version():
 
     version = Version.query.all()
     return render_template('admin/version_form.html', version=version)
-
 
 @application.route('/admin/delete/ChangeLog/<id>', methods=('GET', 'POST'))
 @login_required

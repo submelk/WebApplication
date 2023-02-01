@@ -1,3 +1,4 @@
+import orjson
 from flask import Flask, render_template, abort, request, redirect, url_for, g, session, flash, jsonify
 from tempfile import mkdtemp
 from functools import wraps
