@@ -83,7 +83,7 @@
                       </td>
                       <td class="w-300">
                         <p class="mb-0">
-                          <a href="#"><strong>{{ index.questions }}</strong></a>
+                          <a href="#"><strong>{{ index.questions | safe  }}</strong></a>
                           <small class="sidetitle">{{ index.date }}</small>
                         </p>
                         <p class="mb-0"><a href="{{ url_for('delete_FAQ', FAQ_id=index.id) }}"
