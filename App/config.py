@@ -1,8 +1,8 @@
 __author__ = "NimaFakoor"
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
-import logging
-logging.basicConfig(filename='logging/server.log',format='[%(funcName)s] - %(levelname)s [%(asctime)s] %(message)s' , level=logging.DEBUG) 
+# import logging
+# logging.basicConfig(filename='logging/server.log',format='[%(funcName)s] - %(levelname)s [%(asctime)s] %(message)s' , level=logging.DEBUG) 
 
 from App import application
 

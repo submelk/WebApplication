@@ -57,8 +57,7 @@ def admin_faq():
 @login_required
 def add_FAQ():
 
-    faq_entry = FAQ(
-        questions=request.form['questions'], answers=request.form['answers'])
+    faq_entry = FAQ(questions=request.form['questions'], answers=request.form['answers'])
     db.session.add(faq_entry)
     db.session.commit()
 

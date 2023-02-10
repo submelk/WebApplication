@@ -83,7 +83,7 @@
                       </td>
                       <td class="w-300">
                         <p class="mb-0">
-                          <a href="#"><strong>{{ index.questions | safe  }}</strong></a>
+                          <a href="#"><strong>{{ index.questions | safe }}</strong></a>
                           <small class="sidetitle">{{ index.date }}</small>
                         </p>
                         <p class="mb-0"><a href="{{ url_for('delete_FAQ', FAQ_id=index.id) }}"
@@ -92,7 +92,7 @@
                       </td>
                       <td class="w-300">
                         <nav class="nav mt-2">
-                          {{ index.answers }}
+                          {{ index.answers | safe }}
                         </nav>
                       </td>
                     </tr>
@@ -132,6 +132,12 @@
     $('iframe.wysihtml5-sandbox').each(function (i) {
       $(this).contents().find("body").css({ 'direction': 'rtl', 'font-family': 'yekan' });
     });
+    
   })
+  
+const str = "The morning is upon us.";
+str.slice(-3); // 'us.'
+str.slice(-3, -1); // 'us'
+
 </script>
 {% endblock %}

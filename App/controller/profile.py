@@ -1,3 +1,4 @@
+import os
 from .packages import *
 from .auth import *
 
@@ -23,18 +24,27 @@ def profile_index():
 @application.route("/profile/information", methods=('GET', 'POST'))
 @login_required
 def profile_information():
-  
-    # file = request.files['uimage_file']
-    # filename = os.path.join(application.config['UPLOAD_FOLDER'], file.filename)
-    # file.save(filename)
-
-
-    # phrase_entry = UserInformation(uname = request.form["uname"],ufamily = request.form["ufamily"],uiid = request.form["uiid"],ubirthday = request.form["ubirthday"],uemail = request.form["uemail"],uaddress = request.form["uaddress"], file_address=file.filename)
-    # db.session.add(phrase_entry)
-    # db.session.commit()
-    
-    # error1 = "فایل با موفقیت بارگذاری شد"
-    # flash(error1)
 
     return render_template('member/profile_information.html')
 
+
+@application.route('/add/UserInformation', methods=['POST'])
+@login_required
+def add_UserInformation():
+
+    # file = request.files['uimage_file']
+    # #filename = os.path.join(application.config['UPLOAD_FOLDER'], file.filename)
+    # #filename = file.filename
+    # #file.save(filename)
+
+    # error1 = "فایل با موفقیت بارگذاری شد"
+    # flash(error1)
+
+    phrase_entry = UserInformation(uname = request.form["uname"],ufamily = request.form["ufamily"],uiid = request.form["uiid"],ubirthday = request.form["ubirthday"],uphone = request.form["uphone"],uemail = request.form["uemail"],uaddress = request.form["uaddress"])
+    db.session.add(phrase_entry)
+    db.session.commit()
+
+    error2 = "اطلاعات با موفقیت ثبت شد، لطفا منتظر فعال شدن حساب باشید"
+    flash(error2)
+
+    return redirect(url_for('profile_information'))

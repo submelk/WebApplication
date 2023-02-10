@@ -36,11 +36,11 @@ class UserInformation(db.Model):
     ufamily = db.Column(db.String(50), nullable=True)
     uiid = db.Column(db.String(50), nullable=True)
     ubirthday = db.Column(db.String(50), nullable=True)  # meli code
+    uphone = db.Column(db.String(50), nullable=True)
     uemail = db.Column(db.String(50), nullable=True)
     uaddress = db.Column(db.Text, nullable=True)
     uverification = db.Column(db.String(50), nullable=True)
-    uimage_file = db.Column(db.String(
-        50), nullable=True, default='https://static.thenounproject.com/png/261694-200.png')
+    uimage_file = db.Column(db.String(50), nullable=True, default='https://static.thenounproject.com/png/261694-200.png')
 
 # Page
 class Page(db.Model):
